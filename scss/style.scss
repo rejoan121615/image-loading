@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// scroll trigger test perpus 
+body {
+    padding-top: 150vh;
+    padding-bottom: 150vh;
+}
+
+.container {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    @media only screen and (min-width: 425px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    gap: 15px;
+}
+
+.img-wrap {
+    position: relative;
+    overflow: hidden;
+    &:nth-child(3) {
+        @media only screen and (min-width: 425px) {
+            grid-column: span 2;
+        }
+    }
+}
+
+.img-mask {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+}
+
+img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
